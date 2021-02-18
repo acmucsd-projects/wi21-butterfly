@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="982512f0-7e14-4b05-95bb-3d9761a37997" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/wi21-butterfly/screens/login.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wi21-butterfly/screens/login_signup.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/wi21-butterfly/screens/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wi21-butterfly/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/wi21-butterfly/App.tsx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/wi21-butterfly" />
+  </component>
+  <component name="ProjectId" id="1odPWBXOvPHzc5cgg7lIUdNBdEI" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="982512f0-7e14-4b05-95bb-3d9761a37997" name="Default Changelist" comment="" />
+      <created>1613613523348</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1613613523348</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="560" y="106" width="1231" height="840" key="AVDManager" timestamp="1613614494100">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="560" y="106" width="1231" height="840" key="AVDManager/0.0.1920.1040@0.0.1920.1040" timestamp="1613614494100" />
+    <state x="798" y="94" key="CommitChangelistDialog2" timestamp="1613613548475">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="798" y="94" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1613613548475" />
+  </component>
+</project>
