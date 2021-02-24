@@ -2,10 +2,12 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import Dashboard from './screens/dashboard'
-
+import Login from './screens/login'
+import Search from './screens/search'
+import viewActivity from './screens/viewactivity'
 export default function App() {
   return (
-    // <Dashboard/>
+    //<Dashboard/>
     <View style={styles.container}>
       <Text>Open up App.tsx to start working on your app!</Text>
       <StatusBar style="auto" />
