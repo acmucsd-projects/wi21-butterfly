@@ -1,6 +1,8 @@
 const express = require('express');
+const mongoose = require("mongoose");
 const connectDB = require('./config/db');
 const event = require('./models/Event');
+const passport = require("passport");
 
 const app = express();
 
@@ -20,6 +22,12 @@ app.use(bodyParcer.urlencoded({
     extended : true
 }));
 app.use(bodyParcer.json());
+
+// Passport middleware
+app.use(passport.initialize());
+
+// Passport config
+require("./config/passport")(passport);
 
 app.use("/api", EventRoutes);
 app.use("/api", StudRoutes);

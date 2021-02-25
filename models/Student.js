@@ -3,15 +3,15 @@ const mongoose = require('mongoose');
 const StudentSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: false
+    required: true
   },
   email: {
     type: String,
-    required: false
+    required: true
   },
   password: {
     type: String,
-    required: false
+    required: true
   },
   college: {
     type: String,
@@ -20,6 +20,10 @@ const StudentSchema = new mongoose.Schema({
   birthday: {
     type: Date,
     required: false
+  },
+  date: {
+    type: Date,
+    default: Date.now
   }
 });
 
