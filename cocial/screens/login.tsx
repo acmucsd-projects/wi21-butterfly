@@ -59,43 +59,35 @@ const styles = StyleSheet.create({
     flex : 1,
     backgroundColor: "#FEBB5B",
   },
- 
   inputEmailView: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 30,
-    width: '50%',
+    width: '70%',
     height: "7%",
     marginTop: '20%',
     alignSelf : 'center',
     justifyContent: "center",
     alignItems: "center",
   },
-
   inputPasswordView: {
     backgroundColor: "#FFFFFF",
-    borderRadius: 30,
-    width: '50%',
+    width: '70%',
     height: "7%",
     marginTop: '10%',
     alignSelf : 'center',
     justifyContent: "center",
     alignItems: "center",
   },
- 
- 
   TextInput: {
     alignItems: 'center',
   },
- 
   forgot_button: {
     height: '15%',
     width: '50%',
     marginTop: '5%',
     marginLeft : '36%',
   },
- 
   loginBtn: {
-    width: 200,
+    width: '70%',
     borderRadius: 25,
     height: '7%',
     alignSelf : 'center',

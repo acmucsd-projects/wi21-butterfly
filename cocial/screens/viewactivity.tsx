@@ -42,7 +42,6 @@ const styles = StyleSheet.create({
   },
   searchBtn: {
     backgroundColor: "#FF7171",
-    borderRadius: 30,
     width: '80%',
     height: "7%",
     marginTop: '5%',
