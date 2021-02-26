@@ -46,18 +46,22 @@ const styles = StyleSheet.create({
   loginbutton: {
     backgroundColor: "white",
     marginBottom: 25,
-    padding: 20,
     borderRadius: 10,
-    width: 208,
-    height: 58,
+    width: '70%',
+    height: '7%',
+    alignItems: "center",
+    alignSelf: 'center',
+    justifyContent: 'center'
   },
   signupbutton: {
     backgroundColor: colors.blue,
     marginBottom: 25,
-    padding: 20,
     borderRadius: 10,
-    width: 208,
-    height: 58,
+    width: '70%',
+    height: '7%',
+    alignItems: "center",
+    alignSelf: 'center',
+    justifyContent: 'center'
   },
   buttontextlogin: {
     color: 'black',

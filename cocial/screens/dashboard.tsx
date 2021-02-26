@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet , Text, View, Button} from 'react-native';
+import { StyleSheet, Text, View, Button} from 'react-native';
 
 export default function Dashboard() {
 
@@ -19,7 +19,7 @@ export default function Dashboard() {
       <View style={styles.body}>
       <Text>New Activites</Text>
       <View style={styles.box}>
-          <Button color = 'white' title='Skateboarding' onPress={clickHandler} />
+          <Button color = 'black' title='Skateboarding' onPress={clickHandler} />
         </View>
       <Text>Friend Activites</Text>
       <View style={styles.box}>

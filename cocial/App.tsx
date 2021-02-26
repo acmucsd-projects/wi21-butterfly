@@ -8,13 +8,15 @@ import Friends from './screens/friends'
 import PostActivity from './screens/postactivity'
 import LoginSignup from './screens/loginsignup'
 import Search from './screens/search'
+import SignUp from './screens/signup'
 
 export default function App() {
   return (
     // // <Dashboard/>
-    <LoginSignup/>
+    // <LoginSignup/>
     // <PostActivity />
     // <Search />
+    <SignUp />
     // <View style={styles.container}>
     //   <Text>Open up App.tsx to start working on your app!</Text>
     //   <StatusBar style="auto" />

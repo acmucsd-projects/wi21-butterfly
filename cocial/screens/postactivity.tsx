@@ -23,7 +23,7 @@ export default function PostActivity() {
           <Text style={styles.buttontext} >Upload</Text>
         </TouchableOpacity>
 
-        <TextInput style={styles.input} placeholder='Description' multiline={true} />
+        <TextInput style={styles.input} placeholder='Description' multiline={true}  numberOfLines={4}/>
         <TextInput style={styles.input} placeholder='Tags' multiline={true} />
         <TextInput style={styles.input} placeholder='Location' />
         <TextInput style={styles.input} placeholder='Time/Date' />
