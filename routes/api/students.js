@@ -146,4 +146,34 @@ router.delete('/students/:id', (req, res) => {
     .catch(err => res.status(404).json({ error: 'No such student' }));
 });
 
+// @route GET api/students/friendsList/:id
+// @description see friend's list of student by id
+// @access Public
+router.get('/students/friendsList/:id', async (req, res) => {
+  Student.findOne({'_id': req.params.id}).populate('friends')
+  .exec((err, friends) => {res.json(friends);})
+});
+
+// @route GET api/students/addFriend/:id
+// @description add a friend by id
+// @access Public
+router.post('/students/addFriend/:id', async (req, res) => {
+  
+  //adds friend1 -> friend2
+  Student.findByIdAndUpdate(req.params.id, {$addToSet: {"friends": req.body.friend}},
+  {safe: true, upsert: true, new : true})
+  .then(student => res.json({ msg: 'added successfully' }))
+  .catch(err =>
+    res.status(400).json({ error: 'Unable to add friend' })
+  );
+
+  //adds friend2 -> friend1
+  Student.findByIdAndUpdate(req.body.friend, {$addToSet: {"friends": req.params.id}},
+  {safe: true, upsert: true, new : true})
+  .then(student => res.json({ msg: 'added successfully' }))
+  .catch(err =>
+    res.status(400).json({ error: 'Unable to add friend' })
+  );
+});
+
 module.exports = router;
