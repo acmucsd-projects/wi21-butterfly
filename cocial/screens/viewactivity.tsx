@@ -10,7 +10,6 @@ import {
 } from "react-native";
 
 export default function viewActivity() {
-  const handlePress = () => false
   return (
     <View style={styles.container}>
         <Text style={styles.viewText}>View</Text>
@@ -31,10 +30,10 @@ export default function viewActivity() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FEBB5B",
+    backgroundColor: "#FFFFFF",
   },
   viewText: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
     color: "#FF7171",
     marginTop: '5%',
@@ -51,14 +50,14 @@ const styles = StyleSheet.create({
   },
 
   attending: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
     color: "#FF7171",
     marginTop: '7%',
     marginLeft: '10%',
   },
   interested: {
-    fontSize: 30,
+    fontSize: 20,
     fontWeight: "bold",
     color: "#FF7171",
     marginTop: '70%',

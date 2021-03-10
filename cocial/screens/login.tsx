@@ -41,7 +41,7 @@ export default function Login() {
         </TouchableOpacity>
  
         <TouchableOpacity style={styles.loginBtn}>
-          <Text>Login</Text>
+          <Text style={{color: "#FEBB5B", fontSize: 25}}>Login</Text>
         </TouchableOpacity>
       </View>
     </View>
@@ -52,12 +52,12 @@ const styles = StyleSheet.create({
     fontSize : 60,
     alignSelf: 'center',
     fontWeight : "bold",
-    color : "#FF7171",
+    color : "#FEBB5B",
     marginTop : '10%',
   },
   container: {
     flex : 1,
-    backgroundColor: "#FEBB5B",
+    backgroundColor: "#FFFFFF",
   },
   inputEmailView: {
     backgroundColor: "#FFFFFF",
@@ -67,6 +67,8 @@ const styles = StyleSheet.create({
     alignSelf : 'center',
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 2,
+    borderColor: "#FEBB5B",
   },
   inputPasswordView: {
     backgroundColor: "#FFFFFF",
@@ -76,25 +78,30 @@ const styles = StyleSheet.create({
     alignSelf : 'center',
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 2,
+    borderColor: "#FEBB5B",
   },
   TextInput: {
     alignItems: 'center',
+
   },
   forgot_button: {
     height: '15%',
     width: '50%',
     marginTop: '5%',
     marginLeft : '36%',
+    color : "#FEBB5B",
   },
   loginBtn: {
     width: '70%',
     borderRadius: 25,
-    height: '7%',
+    height: '8%',
     alignSelf : 'center',
     alignItems: "center",
     justifyContent: "center",
     marginBottom: '5%',
-    backgroundColor: "#FF7171",
+    borderColor: "#FEBB5B",
+    borderWidth: 3,
   },
  
 });
