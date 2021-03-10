@@ -1,10 +1,12 @@
 const express = require('express');
+var cors = require('cors');
 const mongoose = require("mongoose");
 const connectDB = require('./config/db');
 const event = require('./models/Event');
 const passport = require("passport");
-
 const app = express();
+
+app.use(cors());
 
 // Connect Database
 connectDB();
