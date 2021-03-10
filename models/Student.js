@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+var ObjectId = require('mongodb').ObjectID;
 
 const StudentSchema = new mongoose.Schema({
   name: {
@@ -24,7 +25,8 @@ const StudentSchema = new mongoose.Schema({
   date: {
     type: Date,
     default: Date.now
-  }
+  },
+  friends: [{ type : ObjectId, ref: 'student' }]
 });
 
 module.exports = Student = mongoose.model('student', StudentSchema);
