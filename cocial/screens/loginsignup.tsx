@@ -1,17 +1,27 @@
 import React from 'react';
-import {Text, View, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
+import {Text, View, Image, StyleSheet, TouchableOpacity } from 'react-native';
 import { colors } from '../assets/theme'
 
-export default function LoginSignup() {
+
+export default function LoginSignup({ navigation }) {
+
+  const navSignUp = () => {
+    navigation.navigate('SignUp');
+  }
+
+  const navLogin = () => {
+    navigation.navigate('Login');
+  }
+
   return (
     <View style={styles.container}> 
       <Text style={styles.title}>Cocial</Text>
-      <Image style={styles.logo} source={require('../assets/cat.jpg')} />
-      <TouchableOpacity style={styles.loginbutton} >
+      <Image style={styles.logo} source={require('../assets/login_white.png')} />
+      <TouchableOpacity style={styles.loginbutton}  onPress={navLogin}> 
         <Text style={styles.buttontextlogin} >Login</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.signupbutton}>
-        <Text style={styles.buttontextsignup}>Sign Up</Text>
+      <TouchableOpacity style={styles.signupbutton}  onPress={navSignUp}>
+        <Text style={styles.buttontextsignup} >Sign Up</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.ghostButton}>
       </TouchableOpacity>
@@ -30,8 +40,6 @@ const styles = StyleSheet.create({
     flex: 1,
     marginTop: 100,
     marginBottom: -50,
-    // fontWeight: 'bold',
-    // fontSize: 45,
     color: '#000000',
     fontStyle: 'normal',
     fontWeight: 'normal',
@@ -40,13 +48,13 @@ const styles = StyleSheet.create({
   },
   logo: {
     flex: 2,
-    resizeMode: 'center',
-    marginBottom: 20,
+    // resizeMode: 'center',
+    // marginBottom: 20,
   },
   loginbutton: {
     backgroundColor: "white",
     marginBottom: 25,
-    borderRadius: 10,
+    borderRadius: 27,
     width: '70%',
     height: '7%',
     alignItems: "center",
@@ -54,9 +62,11 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   signupbutton: {
-    backgroundColor: colors.blue,
+    backgroundColor: colors.orange,
     marginBottom: 25,
-    borderRadius: 10,
+    borderRadius: 27,
+    borderWidth: 2.75,
+    borderColor: "white",
     width: '70%',
     height: '7%',
     alignItems: "center",
@@ -64,7 +74,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center'
   },
   buttontextlogin: {
-    color: 'black',
+    color: colors.orange,
     alignSelf: 'center',
   },
   buttontextsignup: {

@@ -39,10 +39,10 @@ export default function Settings() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 50,
-    backgroundColor: '#FFFFFF',
+    // marginHorizontal: 50,
+    // backgroundColor: '#FFFFFF',
     // alignItems: 'center',
-    justifyContent: 'flex-start'
+    // justifyContent: 'flex-start'
   },
   secondContainter: {
     flex: 1,

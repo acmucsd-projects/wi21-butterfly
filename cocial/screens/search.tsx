@@ -50,6 +50,7 @@ export default function Search() {
     setSearch(val);
   } 
 
+
   return (
     // <TouchableWithoutFeedback onPress={() => {
     //   console.log('dismissed keyboard')

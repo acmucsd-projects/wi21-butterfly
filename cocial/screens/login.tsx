@@ -11,7 +11,20 @@ import {
 } from "react-native";
  
  
-export default function Login() {
+export default function Login({ navigation }) {
+
+  // const goBackScreen = () => {
+  //   navigation.goBack();
+  // }
+
+  const navLogin = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Dashboard'}],
+    });
+    // navigation.navigate('Dashboard');
+  }
+
   return (
     <View style = { styles.container }> 
       <View style={styles.container}>
@@ -40,7 +53,7 @@ export default function Login() {
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
  
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn} onPress={navLogin}>
           <Text>Login</Text>
         </TouchableOpacity>
       </View>

@@ -1,6 +1,8 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button} from 'react-native';
 
+
+
 export default function Dashboard() {
 
   const clickHandler = () => {
@@ -9,7 +11,7 @@ export default function Dashboard() {
   return (
 
     <View style={styles.container}>
-      <View style={styles.header}>
+     <View style={styles.header}>
         <Text style={styles.title}>Dashboard</Text>
         <View style={styles.profileContainer}>
           <Button color = 'white' title='Profile' onPress={clickHandler} />
@@ -30,23 +32,18 @@ export default function Dashboard() {
           <Button color = 'white' title='Handgliding @ Gliderport' onPress={clickHandler} />
         </View>    
       </View>
-      
-    
-
-    </View>
-
-    
-
+   </View>
   );
 }
+
+
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 50,
-    backgroundColor: '#FFFFFF',
     // alignItems: 'center',
-    // justifyContent: 'flex-start'
+    // justifyContent: 'flex-start',
+    
   },
   header: {
     flexDirection: 'row',

@@ -2,13 +2,14 @@ import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput } from 'react-native';
 import DatePicker from 'react-native-date-picker'
 
-export default function Signup() {
+export default function Signup({ navigation }) {
   const [value, setValue] = useState(false);
 
-  const clickHandler = () => {
+  const navSignUp = () => {
     if(!value){
       alert('Successful Sign Up');
       setValue(true);
+      navigation.navigate('Dashboard');
     }
     else
     alert('Signed Up');
@@ -50,7 +51,7 @@ export default function Signup() {
 
 
         <View style={styles.buttonContainer}>
-          <Button color = 'white' title='Sign Up' onPress={clickHandler} />
+          <Button color = 'white' title='Sign Up' onPress={navSignUp} />
         </View>
 
         
