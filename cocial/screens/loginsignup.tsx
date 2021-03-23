@@ -2,12 +2,12 @@ import React from 'react';
 import {Text, View, Image, StyleSheet, Button, TouchableOpacity } from 'react-native';
 import { colors } from '../assets/theme'
 
-export default function LoginSignup() {
+export default function LoginSignup({navigation}: {navigation: any}) {
   return (
     <View style={styles.container}> 
       <Text style={styles.title}>Cocial</Text>
       <Image style={styles.logo} source={require('../assets/cat.jpg')} />
-      <TouchableOpacity style={styles.loginbutton} >
+      <TouchableOpacity style={styles.loginbutton} onPress={() => navigation.navigate('Login')} >
         <Text style={styles.buttontextlogin} >Login</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.signupbutton}>

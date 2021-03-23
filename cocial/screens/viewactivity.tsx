@@ -9,7 +9,7 @@ import {
   Button,
 } from "react-native";
 
-export default function viewActivity() {
+export default function viewActivity({navigation}: {navigation: any}) {
   return (
     <View style={styles.container}>
         <Text style={styles.viewText}>View</Text>

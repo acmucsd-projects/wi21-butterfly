@@ -11,7 +11,7 @@ import {
 } from "react-native";
  
  
-export default function Login() {
+export default function Login({navigation}: {navigation: any}) {
   return (
     <View style = { styles.container }> 
       <View style={styles.container}>
@@ -40,7 +40,7 @@ export default function Login() {
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
  
-        <TouchableOpacity style={styles.loginBtn}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Dashboard')}>
           <Text style={{color: "#FEBB5B", fontSize: 25}}>Login</Text>
         </TouchableOpacity>
       </View>
@@ -83,7 +83,8 @@ const styles = StyleSheet.create({
   },
   TextInput: {
     alignItems: 'center',
-
+    width: '100%',
+    textAlign: 'center',
   },
   forgot_button: {
     height: '15%',
