@@ -11,39 +11,44 @@ export default function Dashboard() {
   return (
 
     <View style={styles.container}>
-     <View style={styles.header}>
-        <Text style={styles.title}>Dashboard</Text>
+      <View style={styles.header}>
+        <Text style={styles.title}>Cocial</Text>
         <View style={styles.profileContainer}>
-          <Button color = 'white' title='Profile' onPress={clickHandler} />
+          <Button color = 'black' title='Profile' onPress={clickHandler} />
         </View>
       </View>
          
       <View style={styles.body}>
-      <Text>New Activites</Text>
-      <View style={styles.box}>
-          <Button color = 'black' title='Skateboarding' onPress={clickHandler} />
-        </View>
-      <Text>Friend Activites</Text>
-      <View style={styles.box}>
-          <Button color = 'white' title='Grocery Run' onPress={clickHandler} />
-        </View>  
-      <Text>Recommended Activites</Text>
-      <View style={styles.box}>
-          <Button color = 'white' title='Handgliding @ Gliderport' onPress={clickHandler} />
-        </View>    
+        <Text>New Activites</Text>
+          <View style={styles.box}>
+              <Button color = 'black' title='Skateboarding' onPress={clickHandler} />
+            </View>
+        <Text>Friend Activites</Text>
+          <View style={styles.box}>
+              <Button color = 'black' title='Grocery Run' onPress={clickHandler} />
+            </View>  
+        <Text>Recommended Activites</Text>
+          <View style={styles.box}>
+              <Button color = 'black' title='Handgliding @ Gliderport' onPress={clickHandler} />
+            </View>    
       </View>
-   </View>
+      
+    
+
+    </View>
+
+    
+
   );
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: 50,
+    backgroundColor: '#FFFFFF',
     // alignItems: 'center',
-    // justifyContent: 'flex-start',
-    
+    // justifyContent: 'flex-start'
   },
   header: {
     flexDirection: 'row',
@@ -55,22 +60,27 @@ const styles = StyleSheet.create({
   },
   title: {
     // textAlign: 'center',
+    color: "#FEBB5B",
     fontSize: 20,
     fontWeight: 'bold',
   },
   body: {
-    flex: 1,
+    // flex: 1,
     alignItems: 'flex-start',
     justifyContent: 'space-around',
     // padding: 10,
     // fontWeight: 'bold',
   },
   box:{
-    backgroundColor: 'black',
+    backgroundColor: 'white',
+    color: "black",
     alignSelf: 'center',
-    borderWidth: 50,
-    paddingHorizontal: 30,
-    borderRadius: 10,
+    justifyContent: "center",
+    height: "20%",
+    width: "100%",
+    borderWidth: 2,
+    paddingHorizontal: 25,
+    borderRadius: 5,
   },
   buttonContainer: {
     backgroundColor: 'black',
@@ -81,7 +91,7 @@ const styles = StyleSheet.create({
     borderRadius: 10,
   },
   profileContainer: {
-    backgroundColor: 'black',
-    borderRadius: 10,
+    backgroundColor: "#FEBB5B",
+    borderRadius: 25,
   },
 });
