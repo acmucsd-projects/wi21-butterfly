@@ -6,10 +6,20 @@ import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view
 import { colors } from '../assets/theme'
 
 export default function PostActivity({navigation}) {
+  const [title, setTitle] = useState('');
   const [descrip, setDescription] = useState('');
+  const [tags, setTags] = useState('');
 
+  const setTitlee = (val) => {
+    setTitle(val);
+  }
+  
   const setDescript = (val) => {
     setDescription(val);
+  }
+
+  const setTagss = (val) => {
+    setTags(val);
   }
 
   const navMore = () => {
@@ -26,7 +36,7 @@ export default function PostActivity({navigation}) {
         <View style={styles.container}>
           <Text style={styles.title}>post</Text>
           
-          <TextInput style={styles.input} placeholder='Title' />
+          <TextInput style={styles.input} onChangeText={setTitlee} placeholder='Title' />
 
           <TouchableOpacity style={styles.button} >
             <Text style={styles.buttontext} >photo</Text>
@@ -34,7 +44,7 @@ export default function PostActivity({navigation}) {
 
           <TextInput style={styles.inputDescription} placeholder='Description' 
             multiline={true} numberOfLines={8} onChangeText={setDescript}/>
-          <TextInput style={styles.input} placeholder='Tags' multiline={true} />
+          <TextInput style={styles.input} placeholder='Tags' onChangeText={setTagss} multiline={true} />
 
           <TouchableOpacity style={styles.button} onPress={navMore}>
             <Text style={styles.buttontext} >more</Text>
@@ -57,10 +67,10 @@ const styles = StyleSheet.create ({
     backgroundColor: 'white',
   },
   title: {
-    marginTop: '11%',
+    marginTop: '10%',
     color: colors.orange,
     fontWeight: 'bold',
-    fontSize: 23,
+    fontSize: 25,
     alignSelf: 'flex-start',
     marginLeft: '7%',
     fontFamily: 'OpenSans'
@@ -114,6 +124,7 @@ const styles = StyleSheet.create ({
     color: 'black',
     alignSelf: 'center',
     fontFamily: 'OpenSans-SemiBold',
+    fontSize: 15
   },
   postbutton: {
     backgroundColor: colors.orange,
@@ -130,5 +141,6 @@ const styles = StyleSheet.create ({
     color: 'white',
     alignSelf: 'center',
     fontFamily: 'OpenSans-SemiBold',
+    fontSize: 15
   }
 })

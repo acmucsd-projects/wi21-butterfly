@@ -4,10 +4,25 @@ import DropDownPicker from 'react-native-dropdown-picker';
 
 import { colors } from '../assets/theme'
 
+
 export default function PostActivityMore() {
+
+  const [location, setLocation] = useState("");
+  const [timedate, setTimeDate] = useState("");
+  const [numPeople, setNumPeople] = useState("");
 
   const [OnCampus, setOnCampus] = useState("Null");
   const [Private, setPrivacy] = useState("Null");
+
+  const setLocationn = (val) => {
+    setLocation(val);
+  }
+  const setTimeDatee = (val) => {
+    setTimeDate(val);
+  }
+  const setNumPeoplee = (val) => {
+    setNumPeople(val);
+  }
 
   const setOnOffCampus = (item) => {
     setOnCampus(item.value);
@@ -20,9 +35,9 @@ export default function PostActivityMore() {
   return (
         <View style={styles.container}>
             
-            <TextInput style={styles.input} multiline={true} placeholder='location' />
-            <TextInput style={styles.input} multiline={true} placeholder='time/date' />
-            <TextInput style={styles.input} multiline={true} placeholder='# of people' />
+            <TextInput style={styles.input} multiline={true} onChangeText={setLocationn} placeholder='location' />
+            <TextInput style={styles.input} multiline={true} onChangeText={setTimeDatee} placeholder='time/date' />
+            <TextInput style={styles.input} multiline={true} onChangeText={setNumPeoplee} placeholder='# of people' />
 
             <DropDownPicker
                 items={[
@@ -36,6 +51,7 @@ export default function PostActivityMore() {
                 dropDownStyle={styles.dropdownextend}
                 placeholderStyle={{color: "grey"}}
                 labelStyle={styles.dropdownText}
+                arrowSize={20}
                 onChangeItem={(item) => setOnOffCampus(item)}
             />
             <DropDownPicker
@@ -49,6 +65,7 @@ export default function PostActivityMore() {
                 style={styles.dropdown}
                 dropDownStyle={styles.dropdownextend}
                 labelStyle={styles.dropdownText}
+                arrowSize={20}
                 placeholderStyle={{color: "grey"}}
                 onChangeItem={item => setPriv(item.value)}
             />
@@ -66,7 +83,7 @@ const styles = StyleSheet.create ({
     marginTop: '11%',
     color: colors.orange,
     fontWeight: 'bold',
-    fontSize: 23,
+    fontSize: 25,
     alignSelf: 'flex-start',
     marginLeft: '7%',
     fontFamily: 'OpenSans'
@@ -99,7 +116,8 @@ const styles = StyleSheet.create ({
   },
   dropdownText: {
     textAlign:"center",
-    fontFamily: "OpenSans"
+    fontFamily: "OpenSans-SemiBold",
+    fontSize: 15,
   }
 
 })
