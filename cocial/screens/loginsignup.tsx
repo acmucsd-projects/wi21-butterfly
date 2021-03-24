@@ -15,8 +15,7 @@ export default function LoginSignup({ navigation }) {
 
   return (
     <View style={styles.container}> 
-      <Text style={styles.title}>Cocial</Text>
-      <Image style={styles.logo} source={require('../assets/login_white.png')} />
+      <Image style={styles.logo} source={require('../assets/logo_white.png')} />
       <TouchableOpacity style={styles.loginbutton}  onPress={navLogin}> 
         <Text style={styles.buttontextlogin} >Login</Text>
       </TouchableOpacity>
@@ -47,15 +46,15 @@ const styles = StyleSheet.create({
     lineHeight: 66,
   },
   logo: {
-    flex: 2,
-    // resizeMode: 'center',
-    // marginBottom: 20,
+    flex: 1,
+    resizeMode: 'contain',
+    marginTop: '25%',
   },
   loginbutton: {
     backgroundColor: "white",
     marginBottom: 25,
-    borderRadius: 27,
-    width: '70%',
+    borderRadius: 23,
+    width: '62%',
     height: '7%',
     alignItems: "center",
     alignSelf: 'center',
@@ -64,10 +63,10 @@ const styles = StyleSheet.create({
   signupbutton: {
     backgroundColor: colors.orange,
     marginBottom: 25,
-    borderRadius: 27,
+    borderRadius: 23,
     borderWidth: 2.75,
     borderColor: "white",
-    width: '70%',
+    width: '62%',
     height: '7%',
     alignItems: "center",
     alignSelf: 'center',
@@ -76,13 +75,15 @@ const styles = StyleSheet.create({
   buttontextlogin: {
     color: colors.orange,
     alignSelf: 'center',
+    fontFamily: 'OpenSans',
   },
   buttontextsignup: {
     color: 'white',
-    alignSelf: 'center'
+    alignSelf: 'center',
+    fontFamily: 'OpenSans',
   },
   ghostButton: {
-    marginBottom: 110,
+    marginBottom: '50%',
   }
 
 });

@@ -1,13 +1,7 @@
-import { StatusBar } from "expo-status-bar";
+
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TouchableOpacity,
-  Button,
-} from "react-native";
+
+import { StyleSheet, Text, View, TouchableOpacity } from "react-native";
 
 export default function viewActivity() {
   const handlePress = () => false

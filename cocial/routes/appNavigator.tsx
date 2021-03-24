@@ -10,15 +10,16 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { NavigationContainer } from '@react-navigation/native';
 
-import Dashboard from '../screens/dashboard'
-import Login from '../screens/login'
-import ViewActivity from '../screens/viewactivity'
-import Friends from '../screens/friends'
-import PostActivity from '../screens/postactivity'
-import LoginSignup from '../screens/loginsignup'
-import Search from '../screens/search'
-import SignUp from '../screens/signup'
-import Settings from '../screens/settings'
+import Dashboard from '../screens/dashboard';
+import Login from '../screens/login';
+import ViewActivity from '../screens/viewactivity';
+import Friends from '../screens/friends';
+import PostActivity from '../screens/postactivity';
+import PostActivityMore from '../screens/postactivitymore';
+import LoginSignup from '../screens/loginsignup';
+import Search from '../screens/search';
+import SignUp from '../screens/signup';
+import Settings from '../screens/settings';
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator()
@@ -38,23 +39,31 @@ function MainTabNavigator() {
     
           if (route.name === 'Dashboard') {
             iconName = 'dashboard';
-            return <MaterialIcons name={iconName} size={size} color={color} />;
-          } else if (route.name === 'Friends') {
-            iconName = 'people-alt';
-            return <MaterialIcons name={iconName} size={size} color={color} />;
-          } else if (route.name === 'PostActivity') {
-            iconName = 'upload';
-            return <Feather name={iconName} size={size} color={color} />;
+            return <MaterialIcons name={iconName} size={30} color={color} />;
           } else if (route.name === 'Search') {
             iconName = 'eye';
-            return <AntDesign name={iconName} size={size} color={color} />;
+            return <AntDesign name={iconName} size={30} color={color} />;
+          }  else if (route.name === 'PostActivity') {
+            iconName = 'upload';
+            return <Feather name={iconName} size={30} color={color} />;
+          } else if (route.name === 'Friends') {
+            iconName = 'people-alt';
+            return <MaterialIcons name={iconName} size={30} color={color} />;
           } else if (route.name === 'Settings') {
             iconName = 'settings-sharp';
-            return <Ionicons name={iconName} size={size} color={color} />;
+            return <Ionicons name={iconName} size={30} color={color} />;
           }
-          
         },
       })}
+      tabBarOptions={{
+        activeTintColor: colors.orange,
+        inactiveTintColor: 'black',
+        showLabel: false,
+        style: {
+          borderTopWidth: 1.5,
+          borderTopColor: 'black',
+          height: '9%'}
+      }} 
     >
       <Tab.Screen name="Dashboard" component={Dashboard} />
       <Tab.Screen name="Search" component={Search} />
@@ -97,6 +106,30 @@ export default function MainStackNavigator() {
           name='ViewActivity' 
           component={ViewActivity}
           options={{ title: 'ViewActivity' }}
+        />
+        <Stack.Screen
+          name='PostActivityMore' 
+          component={PostActivityMore}
+          options={{ 
+            title: 'more options',
+            headerBackImage: () => <Ionicons name={'chevron-back'} size={30} color={colors.orange} />,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'OpenSans',
+              fontSize: 23,
+              marginTop: '-2.5%',
+              marginLeft: '-10%',
+            },
+            headerShown: true,
+            headerTintColor: colors.orange,
+            headerStyle: {
+              backgroundColor: 'white',
+              elevation: 0,
+              shadowOpacity: 0,
+              height: 122,
+            },
+
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>
