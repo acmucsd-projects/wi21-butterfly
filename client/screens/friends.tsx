@@ -4,19 +4,20 @@ import {
   StyleSheet,
   Text,
   View,
-  Image,
   TextInput,
   TouchableOpacity,
 } from "react-native";
-
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons'
 export default function Friends() {
   return (
     <View style={styles.container}>
-      <Text style={styles.viewText}>Friends</Text>
-      <TouchableOpacity style={styles.viewBtn}>
-        <Text style={{color:"#003f5c"}}>Messages</Text>
-      </TouchableOpacity>
+      <Text style={styles.friends}>friends</Text>
+      <TouchableOpacity style={styles.msgBtn}>
+        <MaterialCommunityIcons name="message" size={24} color="#FEBB5B"/>
+      </TouchableOpacity>     
       <View style={styles.searchInput}>
+      <AntDesign name='search1' size = {18}/>
         <TextInput
           style={styles.TextInput}
           placeholder="Search"
@@ -30,34 +31,33 @@ export default function Friends() {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: "#FEBB5B",
-  },
-  innerContainer: {
-    backgroundColor: "#FEBB5B",
+    backgroundColor: "#FFFFFF",
   },
   searchInput: {
     backgroundColor: "#FFFFFF",
     width: '80%',
-    height: "7%",
-    marginTop: '15%',
+    height: "15%",
+    marginTop: '7%',
     alignSelf : "center",
     justifyContent: "center",
-    alignItems: "center",
+    borderWidth: 2,
+    borderColor: "#FEBB5B",
   },
 
   TextInput: {
     alignItems: 'center',
   },
-  viewBtn: {
-    width: '20%',
+  msgBtn: {
+    width: 75,
     borderRadius: 25,
-    height: '7%',
+    height: 75,
     alignItems: "center",
     justifyContent: "center",
-    marginRight: '10%',
-    marginTop: '7%',
-    backgroundColor: "#FF7171",
+    marginLeft: '70%',
+    marginTop: '0%',
+    backgroundColor: "#FFFFFF",
+    borderWidth: 2,
+    borderColor: "#FEBB5B",
   },
   results: {
     fontSize: 30,
@@ -66,11 +66,11 @@ const styles = StyleSheet.create({
     marginTop : '7%',
     marginLeft : '10%',
   },
-  viewText: {
+  friends: {
     fontSize: 30,
     fontWeight: "bold",
-    color: "#FF7171",
-    marginTop: '5%',
+    color: "#FEBB5B",
+    marginTop: '10%',
     marginLeft: '5%',
   },
 });
