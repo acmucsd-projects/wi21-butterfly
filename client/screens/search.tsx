@@ -74,7 +74,9 @@ export default function Search() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 28
+    marginTop: 28,
+    backgroundColor: '#fff',
+    justifyContent: 'center'
   },
   resultText: {
     marginTop: 25,
@@ -86,10 +88,14 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
     padding: 20,
     marginHorizontal: 10,
-    marginBottom: 3.5,
+    margin: 5,
     flexDirection: 'row',
     flex: 1,
-    width: 500,
+    width: '95%',
+    borderRadius: 30,
+    justifyContent: 'center',
+    
+    
   },
   shadow: {
     shadowColor: "#000",

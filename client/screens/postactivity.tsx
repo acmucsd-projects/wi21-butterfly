@@ -26,9 +26,7 @@ export default function PostActivity({navigation}) {
     navigation.navigate('PostActivityMore');
   }
 
-  return (
-    <KeyboardAwareScrollView style={{flex:1, backgroundColor:"white"}} automaticallyAdjustContentInsets={false} enableOnAndroid={true}>
-        
+  return (<KeyboardAwareScrollView style={{flex:1, backgroundColor:"white"}} automaticallyAdjustContentInsets={false} enableOnAndroid={true}  viewIsInsideTabBar={true}>
       <TouchableWithoutFeedback onPress={() => {
       console.log('dismissed keyboard')
       Keyboard.dismiss(); }}>
@@ -83,7 +81,7 @@ const styles = StyleSheet.create ({
       borderBottomWidth: 1.5,
       borderBottomColor: 'black',
       fontFamily: 'OpenSans',
-      
+      fontSize: 17
   },
   inputDescription: {
     marginBottom: 10,
@@ -97,6 +95,7 @@ const styles = StyleSheet.create ({
     textAlignVertical: 'top',
     textAlign: 'left',
     fontFamily: 'OpenSans',
+    fontSize: 17
   },
   checkboxContainer:{
     flexDirection: "row",
@@ -124,7 +123,7 @@ const styles = StyleSheet.create ({
     color: 'black',
     alignSelf: 'center',
     fontFamily: 'OpenSans-SemiBold',
-    fontSize: 15
+    fontSize: 16
   },
   postbutton: {
     backgroundColor: colors.orange,
@@ -141,6 +140,6 @@ const styles = StyleSheet.create ({
     color: 'white',
     alignSelf: 'center',
     fontFamily: 'OpenSans-SemiBold',
-    fontSize: 15
+    fontSize: 16
   }
 })

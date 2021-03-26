@@ -96,9 +96,10 @@ const styles = StyleSheet.create ({
       borderBottomWidth: 1.5,
       borderBottomColor: 'black',
       fontFamily: 'OpenSans',
+      fontSize: 17
   },
   dropdownContainer:{
-    height: '10%',
+    height: '9.5%',
     width: "60%",
     marginBottom: '8%',
     marginTop: '5%',

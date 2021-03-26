@@ -85,19 +85,13 @@ const clickHandler = () => {
     //         </View>
     //   </View>
 
-
-
-
-
-
-
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 50,
+    // marginHorizontal: 50,
     backgroundColor: '#FFFFFF',
     // alignItems: 'center',
     // justifyContent: 'flex-start'
