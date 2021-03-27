@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button, StyleSheet, Text, View, TextInput, Switch } from 'react-native';
-// import DatePicker from 'react-native-date-picker';
+import DropDownPicker from 'react-native-dropdown-picker';
+import { TouchableOpacity } from 'react-native-gesture-handler';
 import { colors } from '../assets/theme'
 
 export default function Signup({ navigation }) {
@@ -27,13 +28,20 @@ export default function Signup({ navigation }) {
   const [college, setCollege] = useState('');
   const [birthday, setBirthday] = useState('');
 
+  // const setCollege = (item) => {
+  //   setOnCampus(item.value);
+  // }
+
+  const navDash = () => {
+    navigation.navigate('Dashboard');
+  }
+
   return (
     
-    <><View style={styles.header}>
-      <Text style={styles.title}>Signup</Text>
-    </View>
 
       <View style={styles.container}>
+        <Text style={styles.title}>Sign Up</Text>
+        
         <View style={styles.inputContainers}>
           <TextInput
             placeholder='name'
@@ -55,13 +63,35 @@ export default function Signup({ navigation }) {
             onChangeText={(val) => setPassword(val)} />
 
           <TextInput
-            placeholder='birthday (MM/DD/YY)(CHANGE)'
+            placeholder='birthday (MM/DD/YY)'
+            keyboardType={'default'}
             style={styles.input}
             onChangeText={(val) => setPassword(val)} />
-        </View>
 
-          <Text>College Dropdown (CHANGE)</Text>
-
+            <DropDownPicker
+                items={[
+                    {label: 'UC San Diego', value: 'UCSD'},
+                    {label: 'UC Los Angeles', value: 'UCLA'},
+                    {label: 'UC Berkeley', value: 'UCB'},
+                    {label: 'UC Irvine', value: 'UCI'},
+                    {label: 'UC Santa Cruz', value: 'UCSC'},
+                    {label: 'UC Santa Barbara', value: 'UCSB'},
+                    {label: 'UC Davis', value: 'UCD'},
+                    {label: 'UC Riverside', value: 'UCR'},
+                    {label: 'UC Merced', value: 'UCM'},
+                    
+                ]}
+                defaultNull = {true}
+                placeholder="college"
+                containerStyle={styles.dropdownContainer}
+                style={styles.dropdown}
+                dropDownStyle={styles.dropdownextend}
+                placeholderStyle={{color: "grey"}}
+                labelStyle={styles.dropdownText}
+                arrowSize={20}
+                onChangeItem={(item) => setCollege(item)}
+            />
+          
           <View style={styles.switchContainer}>
             <Switch
             trackColor={{ false: "#767577", true: "#99DE9F" }}
@@ -73,37 +103,42 @@ export default function Signup({ navigation }) {
           </View>
 
 
-          <View style={styles.buttonContainer}>
-            <View style={styles.buttonText}>
-            <Button color = 'white' title='signup' onPress={clickHandler} />
-            </View>
-          </View>
 
-      </View></>
+            <TouchableOpacity style={styles.buttonContainer} onPress={navDash}>
+                <Text style={styles.buttonText}>Signup</Text>
+            </TouchableOpacity>
+          </View> 
+        
+      </View> 
   );
 }
 
 const styles = StyleSheet.create({
-  header: {
-    height: 80,
-    paddingTop: 50,
-  },
-  title: {
-    color: '#FEBB5B',
-    textAlign: 'center',
-    fontSize: 20,
-    fontWeight: 'bold',
-  },
+
   container: {
     flex: 1,
     paddingHorizontal: "7%",
     // marginHorizontal: 50,
     backgroundColor: '#FFFFFF',
-    // alignItems: 'center',
+    alignItems: 'center',
     justifyContent: 'space-evenly',
+    paddingBottom: '25%',
   },
+  title: {
+    flex: 1,
+    color: '#FEBB5B',
+    textAlign: 'center',
+    paddingTop: '10%',
+    fontSize: 25,
+    fontWeight: 'bold',
+  },
+  
   inputContainers: {
-    alignSelf: 'center',
+    flex: 6,
+    // alignSelf: 'center',
+    width: '75%',
+    justifyContent: 'flex-start',
+    paddingBottom: '25%',
   },
   input: {
     marginBottom: 75,
@@ -115,35 +150,62 @@ const styles = StyleSheet.create({
     borderBottomWidth: 2,
     borderBottomColor: 'black',
     color: 'gray',
-    width: 250,
+    // width: 250,
  },
   buttonContainer: {
+    // flex: 1,
     backgroundColor: '#FEBB5B',
+    alignItems: 'center',
     alignSelf: 'center',
-    width: "70%",
-    height: "7%",
-    // paddingVertical: 20,
+    width: "75%",
+    height: "30%",
+
     borderRadius: 45,
-    // justifyContent: 'center',
-    
-    // 
-  },
-  switchContainer: {
-    flexDirection: "row",
-    alignSelf: 'center',
-    marginBottom: 10,
-    // justifyContent: 'flex-start',
-  },
-  switchText:{
-    paddingVertical: 7,
-    paddingHorizontal: 10,
-    fontWeight: 'bold'
-    // justifyContent: 'flex-end',
-    
+
   },
   buttonText:{
-    paddingVertical: 7,
+    paddingTop: '7%',
+    alignItems: 'center',
+    color: '#FFFFFF',
+    // justifyContent: 'center',
+    fontSize: 20,
+  },
+  switchContainer: {
+    // flex: 1,
+    flexDirection: "row",
+    alignSelf: 'center',
+    marginBottom: '15%',
+  },
+  switchText:{
     paddingHorizontal: 10,
+    alignSelf: 'center',
+    fontWeight: 'bold',
+    fontFamily: 'OpenSans-SemiBold',
+    fontSize: 15,
     // justifyContent: 'flex-end',
+    
+  },
+  
+  dropdownContainer:{
+    height: '9.5%',
+    // width: "60%",
+    marginBottom: '15%',
+    // marginTop: '2%',
+  },
+  dropdown: { 
+    borderTopLeftRadius: 25, borderTopRightRadius: 25,
+    borderBottomLeftRadius: 25, borderBottomRightRadius: 25,
+    borderWidth: 1.2,
+    borderColor: "black",
+  },
+  dropdownextend: {
+    borderBottomLeftRadius: 25, borderBottomRightRadius: 24,
+    borderWidth: 1.5,
+    borderColor: "black"
+  },
+  dropdownText: {
+    textAlign:"center",
+    fontFamily: "OpenSans-SemiBold",
+    fontSize: 15,
   },
 });
