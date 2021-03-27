@@ -1,101 +1,91 @@
 import React, { useState } from 'react';
-import {Text, View, Image, StyleSheet, TouchableWithoutFeedback, Keyboard, FlatList } from 'react-native';
-import { SearchBar } from 'react-native-elements';
 
-const data = [
-  {id: '1', text: 'One'},
-  {id: '2', text: 'Two'},
-  {id: '3', text: 'Three'},
-  {id: '4', text: 'Four'},
-  {id: '5', text: 'Five'},
-  {id: '6', text: 'Six'},
-  {id: '7', text: 'Seven'},
-  {id: '8', text: 'Eight'},
-  {id: '9', text: 'Nine'},
-  {id: '10', text: 'Ten'},
-  {id: '11', text: 'Eleven'},
-  {id: '12', text: 'Twelve'},
-  {id: '13', text: 'Thirteen'},
-  {id: '14', text: 'Fourteen'},
-  {id: '15', text: 'Fifteen'},
-  {id: '16', text: 'Sixteen'},
-  {id: '17', text: 'Seventeen'},
-  {id: '18', text: 'Eighteen'},
-]
+import {Text, View, Image, StyleSheet, TouchableWithoutFeedback, Keyboard, FlatList, TextInput, TouchableOpacity} from 'react-native';
 
-const Item = ({item}) => {
-  return (
-    <View style={[styles.item, styles.shadow]}>
-      <Text>{item.text}</Text>
-    </View>
-  );
-}
+import { colors } from '../assets/theme'
+import { AntDesign, Entypo } from '@expo/vector-icons';
 
-const List = () => {
-  return (
-    <FlatList
-      // contentContainerStyle={styles.list}
-      data={data}
-      renderItem={Item}
-      keyExtractor={item => item.id}
-    />
-  );
-}
 
 export default function Search() {
  
   const [search, setSearch] = useState('');
+  const [searchResults, setSearchResults] = useState([
+    {name: "Skateboarding", date: "Mon, Mar 1 AT 3PM", location: "Carmel Valley Skate Park", id: 1},
+  ]);
 
   const changeHandler = (val) => {
     setSearch(val);
   } 
 
+  const Item = ({item}) => {
+    return (
+      <TouchableOpacity style={styles.item}>
+        <View style={styles.activityBox}>
+        <View style={styles.activityText}>
+        <Text style={styles.activityTitle}>{item.name} </Text>
+        <Text ><AntDesign name="clockcircle" size={15} color="black" /> {item.date} </Text>
+        <Text ><Entypo name="location-pin" size={18} color="black" />{item.location} </Text>
+        </View>
+        <Image style={styles.image} source={require('../assets/skateboarder.jpg')} />
+        </View>
+      </TouchableOpacity>
+    );
+  }
+  
+  const List = () => {
+    return (
+      <FlatList
+        data={searchResults}
+        renderItem={Item}
+        keyExtractor={item => item.id}
+      />
+    );
+  }
 
   return (
-    // <TouchableWithoutFeedback onPress={() => {
-    //   console.log('dismissed keyboard')
-    //   Keyboard.dismiss();
-    // }}>
+    <TouchableWithoutFeedback onPress={() => {
+      console.log('dismissed keyboard')
+      Keyboard.dismiss();
+    }}>
       <View style={styles.container}> 
-        <SearchBar
-          placeholder="Search"
-          onChangeText={changeHandler}
-          value={search}
-        />
+        <Text style={styles.title}>Search</Text>
+        <View style={styles.searchSection}>
+          <AntDesign name='search1' style={styles.searchIcon} size = {18}/>
+          <TextInput style={styles.searchInput} placeholder="Search" onChange={changeHandler} />
+        </View>
+
         <Text style={styles.resultText}>Results</Text>
+
         <View style={styles.list}>
           <List />
         </View>
+
       </View>
-    // </TouchableWithoutFeedback>
+    </TouchableWithoutFeedback>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop: 28,
-    backgroundColor: '#fff',
-    justifyContent: 'center'
+    backgroundColor: 'white',
+  },
+  title: {
+    marginTop: '7%',
+    color: colors.orange,
+    fontWeight: 'bold',
+    fontSize: 25,
+    alignSelf: 'flex-start',
+    marginLeft: '7%',
+    fontFamily: 'OpenSans'
   },
   resultText: {
     marginTop: 25,
     borderBottomColor: 'black',
-    borderBottomWidth: 1,
+    borderBottomWidth: 1.5,
     marginLeft: 5,
-  },
-  item: {
-    backgroundColor: '#fff',
-    padding: 20,
-    marginHorizontal: 10,
-    margin: 5,
-    flexDirection: 'row',
-    flex: 1,
-    width: '95%',
-    borderRadius: 30,
-    justifyContent: 'center',
-    
-    
+    fontFamily: 'OpenSans',
+    fontSize: 17,
   },
   shadow: {
     shadowColor: "#000",
@@ -112,5 +102,59 @@ const styles = StyleSheet.create({
     paddingVertical: 30,
     justifyContent: 'flex-start',
     flex: 1
-  }
+  },
+  searchSection: {
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignSelf: 'center',
+    alignItems: 'center',
+    backgroundColor: "#E3E3E3",
+    width: '90%',
+    height: 52,
+    borderRadius: 30,
+    marginTop: '5%'
+  },
+  searchInput: {
+    flex: 1,
+    borderRadius: 25,
+    width: '100%',
+    paddingTop: 10,
+    paddingRight: 10,
+    paddingBottom: 10,
+    paddingLeft: 0,
+    color: 'black',
+    fontFamily: 'OpenSans'
+  },
+  searchIcon: {
+    padding: 10,
+    paddingLeft: 17
+  },
+  item: {
+    marginVertical: 12,
+    alignSelf: 'center',
+    borderWidth: 2,
+    paddingHorizontal: 15,
+    borderRadius: 25,
+  },
+  activityBox: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+  },
+  activityText: {
+    fontSize: 14,
+    flexDirection: 'column',
+    paddingVertical: 10,
+    
+  },
+  activityTitle: {
+    fontSize: 18,
+    fontWeight: 'bold',
+    paddingBottom: 7,
+  },
+  image: {
+    resizeMode: 'center',
+    width: 75,
+    height: 75,
+    borderRadius: 20,
+  },
 });
