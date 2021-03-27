@@ -12,6 +12,12 @@ import {
  
  
 export default function Login({navigation}: {navigation: any}) {
+  const navLogin = () => {
+    navigation.reset({
+      index: 0,
+      routes: [{name: 'Dashboard'}],
+    });
+  }
   return (
     <View style = { styles.container }> 
       <View style={styles.container}>
@@ -40,7 +46,7 @@ export default function Login({navigation}: {navigation: any}) {
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
  
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Dashboard')}>
+        <TouchableOpacity style={styles.loginBtn} onPress={navLogin}>
           <Text style={{color: "#FEBB5B", fontSize: 25}}>Login</Text>
         </TouchableOpacity>
       </View>

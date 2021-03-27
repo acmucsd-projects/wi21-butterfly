@@ -3,12 +3,27 @@ import {Text, View, StyleSheet, TextInput, TouchableWithoutFeedback, Keyboard,
    TouchableOpacity } from 'react-native';
 import { KeyboardAwareScrollView } from 'react-native-keyboard-aware-scroll-view';
 
+import * as ImagePicker from 'expo-image-picker';
+
 import { colors } from '../assets/theme'
+
 
 export default function PostActivity({navigation}) {
   const [title, setTitle] = useState('');
   const [descrip, setDescription] = useState('');
   const [tags, setTags] = useState('');
+
+  const handleImagePress = async () => {
+    let permissionResult = await ImagePicker.requestMediaLibraryPermissionsAsync();
+
+    if (permissionResult.granted === false) {
+      alert("Permission to access camera roll is required!");
+    }
+
+    else {
+      await ImagePicker.launchImageLibraryAsync();
+    }
+  };
 
   const setTitlee = (val) => {
     setTitle(val);
@@ -27,8 +42,8 @@ export default function PostActivity({navigation}) {
   }
 
   return (
-    <KeyboardAwareScrollView style={{flex:1, backgroundColor:"white"}} automaticallyAdjustContentInsets={false} enableOnAndroid={true}>
-        
+  
+  <KeyboardAwareScrollView style={{flex:1, backgroundColor:"white"}} automaticallyAdjustContentInsets={false} enableOnAndroid={true}  viewIsInsideTabBar={true}>
       <TouchableWithoutFeedback onPress={() => {
       console.log('dismissed keyboard')
       Keyboard.dismiss(); }}>
@@ -39,7 +54,7 @@ export default function PostActivity({navigation}) {
           <TextInput style={styles.input} onChangeText={setTitlee} placeholder='Title' />
 
           <TouchableOpacity style={styles.button} >
-            <Text style={styles.buttontext} >photo</Text>
+            <Text style={styles.buttontext} onPress={handleImagePress}>photo</Text>
           </TouchableOpacity>
 
           <TextInput style={styles.inputDescription} placeholder='Description' 
@@ -67,7 +82,7 @@ const styles = StyleSheet.create ({
     backgroundColor: 'white',
   },
   title: {
-    marginTop: '10%',
+    marginTop: '7%',
     color: colors.orange,
     fontWeight: 'bold',
     fontSize: 25,
@@ -83,7 +98,7 @@ const styles = StyleSheet.create ({
       borderBottomWidth: 1.5,
       borderBottomColor: 'black',
       fontFamily: 'OpenSans',
-      
+      fontSize: 17
   },
   inputDescription: {
     marginBottom: 10,
@@ -97,6 +112,7 @@ const styles = StyleSheet.create ({
     textAlignVertical: 'top',
     textAlign: 'left',
     fontFamily: 'OpenSans',
+    fontSize: 17
   },
   checkboxContainer:{
     flexDirection: "row",
@@ -124,7 +140,7 @@ const styles = StyleSheet.create ({
     color: 'black',
     alignSelf: 'center',
     fontFamily: 'OpenSans-SemiBold',
-    fontSize: 15
+    fontSize: 16
   },
   postbutton: {
     backgroundColor: colors.orange,
@@ -141,6 +157,6 @@ const styles = StyleSheet.create ({
     color: 'white',
     alignSelf: 'center',
     fontFamily: 'OpenSans-SemiBold',
-    fontSize: 15
+    fontSize: 16
   }
 })
