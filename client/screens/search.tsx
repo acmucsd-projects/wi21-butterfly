@@ -19,7 +19,7 @@ export default function Search() {
 
   const Item = ({item}) => {
     return (
-      <TouchableOpacity style={styles.item}>
+      <TouchableOpacity style={[styles.item, styles.shadow]}>
         <View style={styles.activityBox}>
         <View style={styles.activityText}>
         <Text style={styles.activityTitle}>{item.name} </Text>
@@ -91,12 +91,12 @@ const styles = StyleSheet.create({
     shadowColor: "#000",
     shadowOffset: {
       width: 0,
-      height: 2,
+      height: 0,
     },
-    shadowOpacity: 0.25,
-    shadowRadius: 3.84,
+    shadowOpacity: 90,
+    shadowRadius: 90,
     
-    elevation: 5,
+    elevation: 7,
   },
   list: {
     paddingVertical: 30,
@@ -130,11 +130,15 @@ const styles = StyleSheet.create({
     paddingLeft: 17
   },
   item: {
+    flex: 1,
     marginVertical: 12,
     alignSelf: 'center',
-    borderWidth: 2,
+    justifyContent: 'center',
     paddingHorizontal: 15,
     borderRadius: 25,
+    backgroundColor: 'white',
+    width: '90%',
+    height: 115
   },
   activityBox: {
     flexDirection: 'row',
@@ -153,8 +157,8 @@ const styles = StyleSheet.create({
   },
   image: {
     resizeMode: 'center',
-    width: 75,
-    height: 75,
+    width: 120,
+    height: 90,
     borderRadius: 20,
   },
 });
