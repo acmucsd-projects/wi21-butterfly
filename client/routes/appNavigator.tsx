@@ -20,6 +20,11 @@ import LoginSignup from '../screens/loginsignup';
 import Search from '../screens/search';
 import SignUp from '../screens/signup';
 import Settings from '../screens/settings';
+import Notifications from '../screens/settingsPages/notifications'
+import Display from '../screens/settingsPages/display'
+import Privacy from '../screens/settingsPages/privacy'
+import Help from '../screens/settingsPages/help'
+import Logout from '../screens/settingsPages/logout'
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator()
@@ -108,6 +113,11 @@ export default function MainStackNavigator() {
           options={{ title: 'ViewActivity' }}
         />
         <Stack.Screen
+          name='Settings'
+          component={Settings}
+          options={{ title: 'Settings' }}
+        />
+        <Stack.Screen
           name='PostActivityMore' 
           component={PostActivityMore}
           options={{ 
@@ -128,7 +138,121 @@ export default function MainStackNavigator() {
               shadowOpacity: 0,
               height: 122,
             },
-
+          }}
+        />
+        <Stack.Screen
+          name='Notifications' 
+          component={Notifications}
+          options={{ 
+            title: 'Notifications',
+            headerBackImage: () => <Ionicons name={'chevron-back'} size={30} color={colors.orange} />,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'OpenSans',
+              fontSize: 23,
+              marginTop: '-2.5%',
+              marginLeft: '-10%',
+            },
+            headerShown: true,
+            headerTintColor: colors.orange,
+            headerStyle: {
+              backgroundColor: 'white',
+              elevation: 0,
+              shadowOpacity: 0,
+              height: 122,
+            },
+          }}
+        />
+       <Stack.Screen
+          name='Display' 
+          component={Display}
+          options={{ 
+            title: 'Display',
+            headerBackImage: () => <Ionicons name={'chevron-back'} size={30} color={colors.orange} />,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'OpenSans',
+              fontSize: 23,
+              marginTop: '-2.5%',
+              marginLeft: '-10%',
+            },
+            headerShown: true,
+            headerTintColor: colors.orange,
+            headerStyle: {
+              backgroundColor: 'white',
+              elevation: 0,
+              shadowOpacity: 0,
+              height: 122,
+            },
+          }}
+        />
+        <Stack.Screen
+          name='Privacy' 
+          component={Privacy}
+          options={{ 
+            title: 'Privacy',
+            headerBackImage: () => <Ionicons name={'chevron-back'} size={30} color={colors.orange} />,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'OpenSans',
+              fontSize: 23,
+              marginTop: '-2.5%',
+              marginLeft: '-10%',
+            },
+            headerShown: true,
+            headerTintColor: colors.orange,
+            headerStyle: {
+              backgroundColor: 'white',
+              elevation: 0,
+              shadowOpacity: 0,
+              height: 122,
+            },
+          }}
+        />
+        <Stack.Screen
+          name='Help' 
+          component={Help}
+          options={{ 
+            title: 'Help',
+            headerBackImage: () => <Ionicons name={'chevron-back'} size={30} color={colors.orange} />,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'OpenSans',
+              fontSize: 23,
+              marginTop: '-2.5%',
+              marginLeft: '-10%',
+            },
+            headerShown: true,
+            headerTintColor: colors.orange,
+            headerStyle: {
+              backgroundColor: 'white',
+              elevation: 0,
+              shadowOpacity: 0,
+              height: 122,
+            },
+          }}
+        />
+        <Stack.Screen
+          name='Logout' 
+          component={Logout}
+          options={{ 
+            title: 'Logout',
+            headerBackImage: () => <Ionicons name={'chevron-back'} size={30} color={colors.orange} />,
+            headerTitleStyle: {
+              fontWeight: 'bold',
+              fontFamily: 'OpenSans',
+              fontSize: 23,
+              marginTop: '-2.5%',
+              marginLeft: '-10%',
+            },
+            headerShown: true,
+            headerTintColor: colors.orange,
+            headerStyle: {
+              backgroundColor: 'white',
+              elevation: 0,
+              shadowOpacity: 0,
+              height: 122,
+            },
           }}
         />
       </Stack.Navigator>

@@ -7,8 +7,7 @@ import {
   TextInput,
   TouchableOpacity,
 } from "react-native";
-import { MaterialCommunityIcons } from '@expo/vector-icons';
-import { AntDesign } from '@expo/vector-icons'
+import { MaterialCommunityIcons, AntDesign } from '@expo/vector-icons';
 export default function Friends() {
   return (
     <View style={styles.container}>
@@ -43,7 +42,6 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     borderColor: "#FEBB5B",
   },
-
   TextInput: {
     alignItems: 'center',
   },
