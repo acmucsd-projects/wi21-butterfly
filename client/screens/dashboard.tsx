@@ -89,6 +89,21 @@ const clickHandler = () => {
 
       </View>
     </View>
+    
+    //   <View style={styles.body}>
+    //     <Text>New Activites</Text>
+    //       <View style={styles.box}>
+    //           <Button color = 'black' title='Skateboarding' onPress={clickHandler} />
+    //         </View>
+    //     <Text>Friend Activites</Text>
+    //       <View style={styles.box}>
+    //           <Button color = 'black' title='Grocery Run' onPress={clickHandler} />
+    //         </View>
+    //     <Text>Recommended Activites</Text>
+    //       <View style={styles.box}>
+    //           <Button color = 'black' title='Handgliding @ Gliderport' onPress={clickHandler} />
+    //         </View>
+    //   </View>
 
   );
 }
