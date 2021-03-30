@@ -12,6 +12,10 @@ import {
  
  
 export default function Login({navigation}: {navigation: any}) {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [forgotButton, setForgotButton] = useState(false);
+  const [loginButton, setLoginButton] = useState(false);
   return (
     <View style = { styles.container }> 
       <View style={styles.container}>
@@ -21,6 +25,7 @@ export default function Login({navigation}: {navigation: any}) {
         </View>
         <View style={styles.inputEmailView}>
           <TextInput
+            onChangeText={email => setEmail(email)}
             style={styles.TextInput}
             placeholder="Email"
             placeholderTextColor="#003f5c"
@@ -29,6 +34,7 @@ export default function Login({navigation}: {navigation: any}) {
  
         <View style={styles.inputPasswordView}>
           <TextInput
+            onChangeText={password => setEmail(password)}
             style={styles.TextInput}
             placeholder="Password"
             placeholderTextColor="#003f5c"
@@ -36,11 +42,11 @@ export default function Login({navigation}: {navigation: any}) {
           />
         </View>
  
-        <TouchableOpacity>
+        <TouchableOpacity onPress={forgotButton => setForgotButton(true)}>
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
  
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Dashboard')}>
+        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Dashboard')} >
           <Text style={{color: "#FEBB5B", fontSize: 25}}>Login</Text>
         </TouchableOpacity>
       </View>

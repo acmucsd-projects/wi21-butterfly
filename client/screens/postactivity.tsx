@@ -10,7 +10,7 @@ export default function PostActivity({navigation}) {
   const [descrip, setDescription] = useState('');
   const [tags, setTags] = useState('');
 
-  const setTitlee = (val) => {
+  const setTitlee = (val: React.SetStateAction<string>) => {
     setTitle(val);
   }
   
