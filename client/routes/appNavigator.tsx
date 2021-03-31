@@ -20,11 +20,13 @@ import LoginSignup from '../screens/loginsignup';
 import Search from '../screens/search';
 import SignUp from '../screens/signup';
 import Settings from '../screens/settings';
+import ActivityPage from '../screens/activitypage';
 import Notifications from '../screens/settingsPages/notifications'
 import Display from '../screens/settingsPages/display'
 import Privacy from '../screens/settingsPages/privacy'
 import Help from '../screens/settingsPages/help'
 import Logout from '../screens/settingsPages/logout'
+
 
 const Tab = createBottomTabNavigator();
 const Stack = createStackNavigator()
@@ -33,6 +35,14 @@ function MainTabNavigator() {
   return (
     <Tab.Navigator
     screenOptions={({ route }) => ({
+          tabBarButton: [
+            "ActivityPage",
+          ].includes(route.name)
+          ? () => {
+            return null;
+          } :
+          undefined, 
+        
         tabBarIcon: ({ focused, color, size }) => {
           let iconName;
           if (focused) {
@@ -75,6 +85,7 @@ function MainTabNavigator() {
       <Tab.Screen name="PostActivity" component={PostActivity} />
       <Tab.Screen name="Friends" component={Friends} />
       <Tab.Screen name="Settings" component={Settings} />
+      <Tab.Screen name="ActivityPage" component={ActivityPage} />
     </Tab.Navigator>
   )
 }
@@ -91,6 +102,11 @@ export default function MainStackNavigator() {
           name='LoginSignup'
           component={LoginSignup}
           options={{ title: 'LoginSignup' }}
+        />
+        <Stack.Screen
+          name='ActivityPage'
+          component={ActivityPage}
+          options={{ title: 'ActivityPage' }}
         />
         <Stack.Screen
           name='Login'

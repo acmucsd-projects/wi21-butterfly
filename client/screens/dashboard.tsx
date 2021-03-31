@@ -30,7 +30,7 @@ export default function Dashboard({navigation}) {
 
     const Item = ({item}) => {
       return (
-        <TouchableOpacity style={[styles.item]}>
+        <TouchableOpacity style={[styles.item]} onPress={tempNavViewAct}>
             <View style={styles.activityBox}>
               <View style={styles.activityText}>
               <Text style={styles.activityTitle}>{item.name} </Text>
@@ -44,6 +44,10 @@ export default function Dashboard({navigation}) {
     }
 const clickHandler = () => {
     alert();
+  }
+
+  const tempNavViewAct = () => { //DELETE AFTER
+    navigation.navigate('ActivityPage');
   }
   return (
 
