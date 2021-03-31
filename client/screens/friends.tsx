@@ -9,13 +9,17 @@ import {
   FlatList,
   Image
 } from "react-native";
+var axios = require('axios');
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { AntDesign, Entypo } from '@expo/vector-icons'
-
+const person1Image = require('../assets/person1.jpg');
+const person2Image = require('../assets/person2.jpg');
+const person3Image = require('../assets/person3.jpg');
+//http://localhost:8082/api/students
 export default function Friends() {
   const [search, setSearch] = useState("");
   const [friendOne, setFriendOne] = useState([
-    {name: "Jay", id: 1, message: 'Hey!', image: '../assets/person1.jpg'  },
+    {name: "Jay", id: 1, message: 'Hey!', image: person1Image  },
   ]);
   const [friendTwo, setFriendTwo] = useState([
     {name: "Jack", id: 1, message: 'When can you meet up?'},
@@ -31,7 +35,7 @@ export default function Friends() {
               <Text style={styles.activityTitle}>{item.name} </Text>
               <Text style={styles.messageText}>{item.message} </Text>
             </View>
-              <Image style={styles.image} source={require('../assets/person1.jpg')} />
+              <Image style={styles.image} source={item.image} />
           </TouchableOpacity>
         //</TouchableOpacity>
     );
@@ -62,6 +66,25 @@ export default function Friends() {
   //</TouchableOpacity>
     );
   }
+  
+
+  var config = {
+    method: 'get',
+    url: 'http://100.115.49.93:8082/api/students',
+    headers: { }
+  };
+  
+  axios(config)
+  .then(function (response) {
+    const json = response.data;
+    console.log(json[0]['friends']);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+
+  
   return (
     
     <View style={styles.container}>
