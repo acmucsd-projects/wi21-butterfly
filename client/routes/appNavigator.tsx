@@ -20,6 +20,7 @@ import LoginSignup from '../screens/loginsignup';
 import Search from '../screens/search';
 import SignUp from '../screens/signup';
 import Settings from '../screens/settings';
+import Profile from '../screens/profile';
 import ActivityPage from '../screens/activitypage';
 import Notifications from '../screens/settingsPages/notifications'
 import Display from '../screens/settingsPages/display'
@@ -37,6 +38,7 @@ function MainTabNavigator() {
     screenOptions={({ route }) => ({
           tabBarButton: [
             "ActivityPage",
+            "Profile",
           ].includes(route.name)
           ? () => {
             return null;
@@ -86,6 +88,7 @@ function MainTabNavigator() {
       <Tab.Screen name="Friends" component={Friends} />
       <Tab.Screen name="Settings" component={Settings} />
       <Tab.Screen name="ActivityPage" component={ActivityPage} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   )
 }
@@ -107,6 +110,11 @@ export default function MainStackNavigator() {
           name='ActivityPage'
           component={ActivityPage}
           options={{ title: 'ActivityPage' }}
+        />
+        <Stack.Screen
+          name='Profile'
+          component={Profile}
+          options={{ title: 'Profile' }}
         />
         <Stack.Screen
           name='Login'
