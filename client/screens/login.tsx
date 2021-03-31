@@ -1,4 +1,4 @@
-import { StatusBar } from "expo-status-bar";
+  import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
 import {
   StyleSheet,
@@ -9,7 +9,7 @@ import {
   Button,
   TouchableOpacity,
 } from "react-native";
- 
+import axios from "axios";
  
 export default function Login({navigation}: {navigation: any}) {
   const [email, setEmail] = useState("");
@@ -46,7 +46,28 @@ export default function Login({navigation}: {navigation: any}) {
           <Text style={styles.forgot_button}>Forgot Password?</Text>
         </TouchableOpacity>
  
-        <TouchableOpacity style={styles.loginBtn} onPress={() => navigation.navigate('Dashboard')} >
+        <TouchableOpacity style={styles.loginBtn} onPress={() =>{
+          axios({
+            method: 'POST',
+            url: 'http://100.115.49.93:8082/api/students/login', /* change this to prod */
+            data: {
+              email: 'chicken@gmail.com', 
+              password: 'chicken123'
+            }
+          }).then( (response) => {
+            // request succesful
+            const json = response.data;
+
+            console.log(json.success)
+            navigation.navigate('Dashboard')
+          })
+          .catch( (error) => {
+            // oop
+            // handle error
+            alert("Network Error")
+            console.log(error);
+          });
+        } } >
           <Text style={{color: "#FEBB5B", fontSize: 25}}>Login</Text>
         </TouchableOpacity>
       </View>
