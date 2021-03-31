@@ -49,6 +49,10 @@ const clickHandler = () => {
   const tempNavViewAct = () => { //DELETE AFTER
     navigation.navigate('ActivityPage');
   }
+
+  const profileNav = () => { //DELETE AFTER
+    navigation.navigate('Profile');
+  }
   return (
 
 
@@ -56,7 +60,7 @@ const clickHandler = () => {
 
        <View style={styles.header}>
          <Text style={styles.title}>cocial</Text>
-         <TouchableOpacity style={styles.button}>
+         <TouchableOpacity style={styles.button} onPress={profileNav}>
           <Text style={styles.buttontext}>profile</Text>
          </TouchableOpacity>
        </View>
