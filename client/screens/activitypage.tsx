@@ -27,20 +27,20 @@ export default function Dashboard({navigation}) {
     <View style={styles.container}>
       <View style={styles.header}>
         <TouchableOpacity onPress={navDashboard}>
-        <Text style={styles.header}><Ionicons name={'chevron-back'} size={30} color={colors.orange} />icon</Text>
+        <Text style={styles.header}><Ionicons name={'chevron-back'} size={30} color={colors.orange} />dashboard</Text>
         </TouchableOpacity>
       </View>
     
     <View style={styles.item}>
 
-        <Image style={styles.image} source={require('../assets/cat.jpg')} />
+        <Image style={styles.image} source={require('../assets/skateboarder.jpg')} />
         
         <View style={styles.activityText}>
-        <Text style={styles.activityTitle}>ITEM TEXT </Text>
+        <Text style={styles.activityTitle}>Skateboarding </Text>
           <View style={styles.activityRow}>
           <View style={styles.activityColumn}>
-            <Text style={{marginTop: '7%'}}><AntDesign name="clockcircle" size={15} color="black" /> ITEM DATE </Text>
-            <Text style={{marginTop: '7%'}}><Entypo name="location-pin" size={18} color="black" />ITEM LOCATION </Text>
+            <Text style={{marginTop: '7%'}}><AntDesign name="clockcircle" size={15} color="black" /> April 3, 5pm </Text>
+            <Text style={{marginTop: '7%'}}><Entypo name="location-pin" size={18} color="black" />Carmel Valley Skate Park </Text>
             </View>
             <DropDownPicker
                     items={[
@@ -70,12 +70,12 @@ export default function Dashboard({navigation}) {
 
           <View style={styles.activityRow}>
             <View style={styles.activityColumn}>
-            <Text style={styles.simActivityTitle}>SIMILAR ACTIVITY NAME </Text>
-            <Text style={{marginTop: '7%'}}><AntDesign name="clockcircle" size={15} color="black" /> DATE</Text>
-            <Text><Entypo name="location-pin" size={18} color="black" />LOCATION </Text>
+            <Text style={styles.simActivityTitle}>Surfing </Text>
+            <Text style={{marginTop: '7%'}}><AntDesign name="clockcircle" size={15} color="black" /> April 10, 2pm</Text>
+            <Text><Entypo name="location-pin" size={18} color="black" />Torrey Pines </Text>
           </View>
           
-          <Image style={styles.imageSimActivity} source={require('../assets/cat.jpg')} />
+          <Image style={styles.imageSimActivity} source={require('../assets/surfing.jpg')} />
 
           </View>
               
