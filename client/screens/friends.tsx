@@ -15,55 +15,26 @@ import { AntDesign, Entypo } from '@expo/vector-icons'
 const person1Image = require('../assets/person1.jpg');
 const person2Image = require('../assets/person2.jpg');
 const person3Image = require('../assets/person3.jpg');
-//http://localhost:8082/api/students
+
 export default function Friends() {
   const [search, setSearch] = useState("");
-  const [friendOne, setFriendOne] = useState([
+  const [friends, setFriendOne] = useState([
     {name: "Jay", id: 1, message: 'Hey!', image: person1Image  },
+    {name: "Jack", id: 1, message: 'When can you meet up?', image: person2Image},
+    {name: "Mary", id: 1, message: 'Yea, I\'m down!', image: person3Image},
   ]);
-  const [friendTwo, setFriendTwo] = useState([
-    {name: "Jack", id: 1, message: 'When can you meet up?'},
-  ]);
-  const [friendThree, setFriendThree] = useState([
-    {name: "Mary", id: 1, message: 'Yea, I\'m down!'},
-  ]);
+
   const Item = ({item}) => {
     return (
-      //<TouchableOpacity style={styles.item}>
-          <TouchableOpacity style={styles.activityBox}>
-            <View>
+        <TouchableOpacity style={styles.activityBox}>
+          <View style={styles.row}>
+            <View style={styles.column}>     
               <Text style={styles.activityTitle}>{item.name} </Text>
-              <Text style={styles.messageText}>{item.message} </Text>
+              <Text style={styles.messageText}>{item.message} </Text>          
             </View>
-              <Image style={styles.image} source={item.image} />
-          </TouchableOpacity>
-        //</TouchableOpacity>
-    );
-  }
-  const ItemTwo = ({item}) => {
-    return (
-      //<TouchableOpacity style={styles.item}>
-      <TouchableOpacity style={styles.activityBox}>
-        <View>
-          <Text style={styles.activityTitle}>{item.name} </Text>
-          <Text style={styles.messageText}>{item.message} </Text>
+          <Image style={styles.image} source={item.image} />
         </View>
-          <Image style={styles.image} source={require('../assets/person2.jpg')} />
-    </TouchableOpacity>
-  //</TouchableOpacity>
-    );
-  }
-  const ItemThree = ({item}) => {
-    return (
-      //<TouchableOpacity style={styles.item}>
-      <TouchableOpacity style={styles.activityBox}>
-        <View>
-          <Text style={styles.activityTitle}>{item.name} </Text>
-          <Text style={styles.messageText}>{item.message} </Text>
-        </View>
-          <Image style={styles.image} source={require('../assets/person3.jpg')} />
-    </TouchableOpacity>
-  //</TouchableOpacity>
+        </TouchableOpacity>
     );
   }
   
@@ -102,16 +73,8 @@ export default function Friends() {
           />
       </View>
       <FlatList
-        data = {friendOne}
+        data = {friends}
         renderItem={Item}
-      />
-      <FlatList
-        data = {friendTwo}
-        renderItem={ItemTwo}
-      />
-      <FlatList
-        data = {friendThree}
-        renderItem={ItemThree}
       />
     </View>
   ) 
@@ -161,6 +124,12 @@ const styles = StyleSheet.create({
     marginTop: '10%',
     marginLeft: '5%',
   },
+  row: {
+    flexDirection: 'row',
+  },
+  column: {
+    flexDirection: 'column',
+  },
   // item: {
   //   // backgroundColor: 'black',
   //   marginTop: '5%',
@@ -174,8 +143,9 @@ const styles = StyleSheet.create({
   // },
 
   activityBox: {
+    flex: 1,
     flexDirection: 'row',
-    alignContent: 'center',
+    justifyContent: 'space-between',
     width: '70%',
     marginTop: '5%',
     alignSelf: 'center',
@@ -187,21 +157,23 @@ const styles = StyleSheet.create({
   activityTitle: {
     fontSize: 30,
     fontWeight: 'bold',
-    alignSelf: 'center',
+    // alignSelf: 'center',
     paddingBottom: 7,
   },
   messageText: {
     fontSize: 15,
     fontWeight: 'bold',
-    alignSelf: 'center',
+    // alignSelf: 'center',
     paddingBottom: 7,
   },
   image: {
     resizeMode: 'cover',
-    width: '20%',
-    marginLeft: '10%',
-    height: '80%',
-    alignSelf: 'center',
+    width: 75,
+    marginRight: '20%',
+    height: 100,
+    justifyContent: 'flex-end',
+    // alignSelf: 'flex-end',
     borderRadius: 20,
   },  
+  
 });

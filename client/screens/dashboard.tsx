@@ -1,29 +1,30 @@
 import React, { useState } from 'react';
 import { AntDesign, Entypo } from '@expo/vector-icons';
 
-import { StyleSheet , Image, Text, View, Button, FlatList, TouchableOpacity} from 'react-native';
+import { StyleSheet , Image, Text, View, Button, FlatList, TouchableOpacity, requireNativeComponent} from 'react-native';
 
 import { colors } from '../assets/theme'
 
+const skateboarding = require('../assets/skateboarder.jpg');
+const surfing = require('../assets/surfing.jpg');
+const studying = require('../assets/studying.jpg');
+const groceries = require('../assets/groceries.jpg');
+const hanggliding = require('../assets/hanggliding.jpg');
+
 export default function Dashboard({navigation}) {
     const [newActives, setNewActives] = useState([
-      {name: "Skateboarding", date: "Mon, Mar 1 AT 3PM", location: "Carmel Valley Skate Park", id: 1},
-      {name: "Event 2", date: "Mon, Mar 1 AT 3PM", location: "Some place", id: 2},
-      {name: "Studying", date: "Tues, Mar 2 AT 9PM", location: "Geisel Library", id: 3},
-      
-      
-
+      {name: "Skateboarding", date: "Mon, Mar 1 AT 3PM", location: "Carmel Valley Skate Park", id: 1, image: skateboarding},
+      {name: "Surfing", date: "Mon, Mar 1 AT 3PM", location: "Torrey Pines", id: 2, image: surfing},
+      {name: "Studying", date: "Tues, Mar 2 AT 9PM", location: "Geisel Library", id: 3, image: studying},
     ]);
 
     const [friendActives, setFriendActives] = useState([
-      {name: "Grocery Run", date: "SAT, Mar 6 AT 12PM", location: "H-Mart", id: 1},
-      {name: "Skateboarding", date: "Mon, Mar 1 AT 3PM", location: "Carmel Valley Skate Park", id: 2},
-
+      {name: "Grocery Run", date: "SAT, Mar 6 AT 12PM", location: "H-Mart", id: 1, image: groceries},
+      {name: "Skateboarding", date: "Mon, Mar 1 AT 3PM", location: "Carmel Valley Skate Park", id: 2, image: skateboarding},
     ]);
 
     const [recActives, setRecActives] = useState([
-      {name: "Hang Gliding", date: " SUN, Mar 8 AT 5PM SUN, Mar 8 AT 5PM SUN, Mar 8 AT 5PM (Testing Multiple Lines)", location: "Torrey Pines Gliderport", id: 1},
-      {name: "Hang Gliding", date: "SUN, Mar 8 AT 5PM", location: "Torrey Pines Gliderport", id: 2},
+      {name: "Hang Gliding", date: " SUN, Mar 8 AT 5PM", location: "Torrey Pines Gliderport", id: 1, image: hanggliding},
 
     ]);
 
@@ -37,7 +38,7 @@ export default function Dashboard({navigation}) {
               <Text ><AntDesign name="clockcircle" size={15} color="black" /> {item.date} </Text>
               <Text ><Entypo name="location-pin" size={18} color="black" />{item.location} </Text>
               </View>
-              <Image style={styles.image} source={require('../assets/skateboarder.jpg')} />
+              <Image style={styles.image} source={item.image} />
             </View>
           </TouchableOpacity>
       );

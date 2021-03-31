@@ -14,11 +14,11 @@ export default function PostActivity({navigation}) {
     setTitle(val);
   }
   
-  const setDescript = (val) => {
+  const setDescript = (val: React.SetStateAction<string>) => {
     setDescription(val);
   }
 
-  const setTagss = (val) => {
+  const setTagss = (val: React.SetStateAction<string>) => {
     setTags(val);
   }
 
